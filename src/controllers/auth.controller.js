@@ -2,7 +2,8 @@ import {User} from "../models/users.models.js";
 import {ApiResponse} from "../utils/api_response.js";
 import {ApiError} from "../utils/api_error.js";
 import {asyncHandler} from "../utils/async_handler.js";
-import {sendEmail , gmailVerificationContent} from "../utils/mail.js"
+import {sendEmail , gmailVerificationContent , passwordResetContent} from "../utils/mail.js"
+import jwt from "jsonwebtoken";
 
 const generateAccessandRefreshTokens = async (userId)=>{
     try {
