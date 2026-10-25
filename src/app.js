@@ -19,11 +19,13 @@ app.use(cors({
 }))
 
 // importing routes
-import healthcheckRoutes from "./routes/healthcheck.routes.js";
-import authRoute from "./routes/auth.routes.js";
+import healthcheckRouter from "./routes/healthcheck.routes.js";
+import authRouter from "./routes/auth.routes.js";
+import projectRouter from "./routes/project.routes.js";
 
-app.use("/api/v1/healthcheck", healthcheckRoutes);
-app.use("/api/v1/auth",authRoute);
+app.use("/api/v1/healthcheck", healthcheckRouter);
+app.use("/api/v1/auth",authRouter);
+app.use("/api/v1/projects",projectRouter);
 
 
 app.get("/", (req, res) => {
